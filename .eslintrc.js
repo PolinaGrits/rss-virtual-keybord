@@ -1,12 +1,14 @@
 module.exports = {
     "env": {
+        //"amd": true,
+        "node": true,
         "browser": true,
-        "es2021": true
+        "es6": true,
     },
-    "extends": "eslint:recommended",
+    "extends": "airbnb",
     "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+        "ecmaVersion": 6,
+        "sourceType": "module",
     },
     "rules": {
     }
