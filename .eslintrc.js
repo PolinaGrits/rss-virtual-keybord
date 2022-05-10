@@ -5,11 +5,13 @@ module.exports = {
         "browser": true,
         "es6": true,
     },
-    "extends": "airbnb",
+    "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
     },
     "rules": {
-    }
-}
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"]
+    },
+};

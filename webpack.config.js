@@ -1,30 +1,30 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode: "development",
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Virtual Keyboard',
-      filename: 'index.html',
-      template: 'src/index.html'
+      title: "Virtual Keyboard",
+      filename: "index.html",
+      template: "src/index.html"
     }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
   devServer: {
-    static: './dist',
+    static: "./dist",
     port: 3002,
   },
 };
