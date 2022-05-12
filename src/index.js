@@ -375,21 +375,3 @@ keyboard.addEventListener("mouseup", (event)=> {
   }
 });
 
-
-
-const kb = new keyData();
-
-const setLocalStorage = () => localStorage.setItem('lang', kb.getLang());
-
-const getLocalStorage = () => {
-  if (localStorage.getItem('lang')) {
-    kb.init();
-    kb.setLang(localStorage.getItem('lang'));
-  } else {
-    setLocalStorage();
-    getLocalStorage();
-  }
-};
-
-window.addEventListener('load', getLocalStorage);
-window.addEventListener('beforeunload', setLocalStorage);
