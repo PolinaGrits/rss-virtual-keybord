@@ -181,30 +181,26 @@ document.addEventListener("keydown", (event) => {
 });
 
 function shiftOn(){
-  if(capsToggler === false) {let out = "";
-    for (let j = 0; j < keyData.length; j++) {
-      for(let i = 0; i < keyData[j].length; i++) {
-        if (document.documentElement.lang === "en"){
-          out = `<div class = "${keyData[j][i].class}" >` + `${keyData[j][i].shift.en}` + "</div>"; 
-          document.querySelector(`#keyboard_row${j}`).innerHTML += out;
-        } else if (document.documentElement.lang === "ru"){
-          out = `<div class = "${keyData[j][i].class}" >` + `${keyData[j][i].shift.ru}` + "</div>";
-          document.querySelector(`#keyboard_row${j}`).innerHTML += out;
-        }
+  let out = "";
+  for (let j = 0; j < keyData.length; j++) {
+    for(let i = 0; i < keyData[j].length; i++) {
+      if (document.documentElement.lang === "en"){
+        out = `<div class = "${keyData[j][i].class}" >` + `${keyData[j][i].shift.en}` + "</div>"; 
+        document.querySelector(`#keyboard_row${j}`).innerHTML += out;
+      } else if (document.documentElement.lang === "ru"){
+        out = `<div class = "${keyData[j][i].class}" >` + `${keyData[j][i].shift.ru}` + "</div>";
+        document.querySelector(`#keyboard_row${j}`).innerHTML += out;
       }
     }
-    capsToggler = true;
-  
   }
 }
 function shiftOff() {
-    if (document.documentElement.lang === "en") {
-      initEn();
-    } else {
-      initRu();
-    }
-    capsToggler = false;
+  if (document.documentElement.lang === "en") {
+    initEn();
+  } else {
+    initRu();
   }
+}
 
 document.addEventListener("keydown", (event) => {
     if (event.key == "Shift") {
@@ -215,7 +211,7 @@ document.addEventListener("keydown", (event) => {
       keyboardRow.id = `keyboard_row${i}`;
       keyboard.appendChild(keyboardRow);
     }
-    shiftOn();  
+    shiftOn(); 
   } 
 });
 
